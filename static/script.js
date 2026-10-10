@@ -1,0 +1,1 @@
+console.log("Cafe Bliss website loaded successfully!");

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Your Cart</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>☕ Cafe Bliss</h2>
+
+    <ul>
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/menu">Menu</a></li>
+
+    </ul>
+
+</nav>
+
+
+<section class="cart-section">
+
+    <h1>Your Cart 🛒</h1>
+
+
+    {% if cart %}
+
+        {% for item in cart %}
+
+        <div class="cart-item">
+
+            <span>
+                {{ item.name }}
+            </span>
+
+            <span>
+                ₹{{ item.price }}
+            </span>
+
+        </div>
+
+        {% endfor %}
+
+
+        <h2 class="total">
+            Total: ₹{{ total }}
+        </h2>
+
+
+        <a href="/order"
+           class="btn">
+
+            Checkout
+
+        </a>
+
+
+        <a href="/clear_cart"
+           class="btn secondary">
+
+            Clear Cart
+
+        </a>
+
+    {% else %}
+
+        <h2>
+            Your cart is empty 😔
+        </h2>
+
+        <br>
+
+        <a href="/menu"
+           class="btn">
+
+            Go to Menu
+
+        </a>
+
+    {% endif %}
+
+</section>
+
+</body>
+
+</html>

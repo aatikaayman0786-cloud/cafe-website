@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Checkout - Cafe Bliss</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h1>Place Your Order 🛒</h1>
+
+    <h2>
+        Total: ₹{{ total }}
+    </h2>
+
+
+    <form method="POST">
+
+        <input type="text"
+               name="name"
+               placeholder="Customer Name"
+               required>
+
+        <input type="tel"
+               name="phone"
+               placeholder="Phone Number"
+               required>
+
+        <textarea name="address"
+                  placeholder="Delivery Address"
+                  required></textarea>
+
+
+        <button type="submit">
+            Place Order
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

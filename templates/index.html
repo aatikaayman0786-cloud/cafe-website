@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cafe Bliss</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>☕ Cafe Bliss</h2>
+
+    <ul>
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/menu">Menu</a></li>
+
+        <li><a href="/reservation">Reservation</a></li>
+
+        <li><a href="/contact">Contact</a></li>
+
+        {% if session.get("user_id") %}
+
+            <li>
+                <a href="/logout">Logout</a>
+            </li>
+
+        {% else %}
+
+            <li>
+                <a href="/login">Login</a>
+            </li>
+
+        {% endif %}
+
+    </ul>
+
+</nav>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Welcome to Cafe Bliss</h1>
+
+        <p>
+            Fresh Coffee • Delicious Food • Happy Moments
+        </p>
+
+        <a href="/menu" class="btn">
+            Explore Menu
+        </a>
+
+        <a href="/reservation"
+           class="btn secondary">
+            Book a Table
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="about">
+
+    <h2>About Our Cafe</h2>
+
+    <p>
+        Cafe Bliss is a cozy place where you can enjoy
+        freshly brewed coffee, delicious food and
+        wonderful moments with your friends and family.
+    </p>
+
+</section>
+
+
+<section class="features">
+
+    <div class="feature">
+
+        <h3>☕ Fresh Coffee</h3>
+
+        <p>
+            Enjoy freshly brewed coffee every day.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <h3>🍰 Delicious Food</h3>
+
+        <p>
+            Enjoy tasty cakes, snacks and meals.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <h3>❤️ Cozy Atmosphere</h3>
+
+        <p>
+            A perfect place to relax and spend time.
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Cafe Bliss | All Rights Reserved
+    </p>
+
+</footer>
+
+</body>
+
+</html>
